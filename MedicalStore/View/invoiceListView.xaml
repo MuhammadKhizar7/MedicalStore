@@ -1,0 +1,143 @@
+﻿<UserControl x:Class="MedicalStore.View.invoiceListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MedicalStore.View"
+             xmlns:converters="clr-namespace:MedicalStore.Converters"
+             xmlns:helpers="clr-namespace:MedicalStore.Helpers"
+             xmlns:entities="clr-namespace:MedicalStore.Model.Entities;assembly=MedicalStore.Model"
+             xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+
+        <converters:Nan2Visible x:Key="Nan2Visible"/>
+        <converters:Visible2Enable x:Key="Visible2Enable"/>
+        <converters:Visible2NDisable x:Key="Visible2Disable"/>
+    </UserControl.Resources>
+
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel >
+                <TextBlock  Style="{StaticResource Header3}" 
+                           Margin="5,0" 
+                           VerticalAlignment="Center"
+                          Text="Invoices"/>
+                <Separator/>
+                <ToolBarTray >
+                    <ToolBar >
+                        <helpers:MetroCircleButton  Margin="2" 
+                            Style="{StaticResource MetroCircleButtonBase}"
+                            Content="Add Order" 
+                            x:Name="AddOrderBtn" 
+                            Click="AddOrderBtn_OnClick" 
+                            IconKind="Plus" />
+                        <helpers:MetroCircleButton Margin="2" 
+                                                  Style="{StaticResource MetroCircleButtonBase}" 
+                                                  Content="Print" 
+                                                  IconKind="Printer" 
+                                                   x:Name="RptBtn"
+                                                   Click="RptBtn_OnClick"
+                                                 />
+                        <helpers:MetroCircleButton Margin="2" 
+                                                  Style="{StaticResource MetroCircleButtonBase}" 
+                                                  Content="PDF" 
+                                                  IconKind="FilePdf" 
+                                                   x:Name="PrintBtn"
+                                                   Click="PrintBtn_OnClick"
+                                                 />
+
+
+                    </ToolBar>
+                </ToolBarTray>
+                <Separator/>
+                <helpers:MetroSearchBox SelectionChanged="TextBoxBase_OnSelectionChanged" MatchCase="False" MatchWords="False"  Margin="2" controls:TextBoxHelper.Watermark="Search" Grid.Column="1" VerticalAlignment="Stretch"   HorizontalAlignment="Stretch" ></helpers:MetroSearchBox>
+
+            </StackPanel>
+            <DataGrid Grid.Row="1" 
+                      CanUserAddRows="False" 
+                      AutoGenerateColumns="False" 
+                      x:Name="InvoiceDg" 
+                      SelectionChanged="InvoiceDg_OnSelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" 
+                                        Header="N°" 
+                                        Binding="{Binding InvoiceNumber }"/>
+                    <DataGridTextColumn Width="*" 
+                                        Header="Date" 
+                                        Binding="{Binding CreatedAt,StringFormat=d}"/>
+                    <DataGridTextColumn Width="*" 
+                                        Header="Client" 
+                                        Binding="{Binding Patient.Name}"/>
+               
+                    <DataGridTextColumn Width="*" 
+                                        Header="TTC" 
+                                        Binding="{Binding TTC}"/>
+                  
+                    <DataGridTextColumn Width="1.5*" 
+                                        Header="Remaining balance" 
+                                        Binding="{Binding Left}"/>
+                  
+                </DataGrid.Columns>
+                <DataGrid.DataContext>
+                    <entities:Invoice/>
+                </DataGrid.DataContext>
+
+            </DataGrid>
+            <Grid Grid.Row="2" >
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+               
+            </Grid>
+        </Grid>
+        <GridSplitter 
+            Grid.Column="1" 
+            Style="{StaticResource VSplitter}"></GridSplitter>
+        <Grid Grid.Column="2"
+              Margin="5"  >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <TextBlock  Style="{StaticResource Header3}" Margin="5,0" 
+                           VerticalAlignment="Center"
+                          Text="Detail"/>
+                <Separator/>
+            </StackPanel>
+            <DataGrid Grid.Row="1" 
+                      x:Name="InvoiceItemDg"
+                      AutoGenerateColumns="False" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Header="Name" Binding="{Binding Medicine.Name}"/>
+                    <DataGridTextColumn Width="*" Header="Quantity" Binding="{Binding Qnt}"/>
+                    <DataGridTextColumn Width="*" Header="Price" Binding="{Binding UnitPrice}"/>
+
+                    <DataGridTextColumn Width="*" Header="Net" Binding="{Binding THT}"/>
+                    <DataGridTextColumn Width="*" Header="TTC" Binding="{Binding TTC}"/>
+
+                </DataGrid.Columns>
+              
+
+            </DataGrid>
+        </Grid>
+    </Grid>
+</UserControl>

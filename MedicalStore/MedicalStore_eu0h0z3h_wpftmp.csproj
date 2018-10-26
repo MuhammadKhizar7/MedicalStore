@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DBD13E0D-C8A8-4A15-8652-205063055131}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MedicalStore</RootNamespace>
+    <AssemblyName>MedicalStore</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ViewModel\CategoryViewModel.cs" />
+    <Compile Include="ViewModel\EmployeeViewModel.cs" />
+    <Compile Include="ViewModel\MedicineViewModel.cs" />
+    <Compile Include="ViewModel\PatientViewModel.cs" />
+    <Compile Include="ViewModel\SaleViewModel.cs" />
+    <Compile Include="ViewModel\StockViewModel.cs" />
+    <Compile Include="View\categoryView.xaml.cs">
+      <DependentUpon>categoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\employeeView.xaml.cs">
+      <DependentUpon>employeeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\medicineView.xaml.cs">
+      <DependentUpon>medicineView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\patientView.xaml.cs">
+      <DependentUpon>patientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\saleView.xaml.cs">
+      <DependentUpon>saleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\stockView.xaml.cs">
+      <DependentUpon>stockView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\BoolToVisibility.cs" />
+    <Compile Include="Converters\CultureToFlowDirection.cs" />
+    <Compile Include="Converters\Nan2Visible.cs" />
+    <Compile Include="Helpers\HasAncestorOfType.cs" />
+    <Compile Include="Helpers\MenuToolbar.cs" />
+    <Compile Include="Helpers\MetroCircleButton.cs" />
+    <Compile Include="Helpers\MetroFlatButton.cs" />
+    <Compile Include="Helpers\MetroRibbon.cs" />
+    <Compile Include="Helpers\MetroSearchBox.cs" />
+    <Compile Include="Helpers\MetroToggle.cs" />
+    <Compile Include="Helpers\MetroToolTip.cs" />
+    <Compile Include="Helpers\PopupToggle.cs" />
+    <Compile Include="Helpers\RibbonButton.cs" />
+    <Compile Include="Helpers\RibbonDropButton.cs" />
+    <Compile Include="Helpers\RibbonGroup.cs" />
+    <Compile Include="Helpers\RibbonLabel.cs" />
+    <Compile Include="Helpers\RibbonView.cs" />
+    <Compile Include="Helpers\TextblockHelper.cs" />
+    <Compile Include="Helpers\TextboxHelper.cs" />
+    <Compile Include="Helpers\TextBoxInputBehavior.cs" />
+    <Compile Include="Helpers\TextBoxMaskBehavior.cs" />
+    <Compile Include="Helpers\ToolbarButton.cs" />
+    <Compile Include="Helpers\ToolTipper.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MedicalStore.Data\MedicalStore.Data.csproj">
+      <Project>{24D0BB80-8EEE-4AF3-87A6-F3DB3D907296}</Project>
+      <Name>MedicalStore.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MedicalStore.Model\MedicalStore.Model.csproj">
+      <Project>{7f0e5d8d-cd09-47d2-a38f-305af71ce3ef}</Project>
+      <Name>MedicalStore.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ReferencePath Include="C:\Users\Developer\source\repos\MedicalStore\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll" />
+    <ReferencePath Include="C:\Users\Developer\source\repos\MedicalStore\packages\ControlzEx.3.0.2.4\lib\net45\ControlzEx.dll" />
+    <ReferencePath Include="C:\Users\Developer\source\repos\MedicalStore\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll" />
+    <ReferencePath Include="C:\Users\Developer\source\repos\MedicalStore\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll" />
+    <ReferencePath Include="C:\Users\Developer\source\repos\MedicalStore\packages\LoadingIndicators.WPF.0.0.1\lib\LoadingIndicators.WPF.dll" />
+    <ReferencePath Include="C:\Users\Developer\source\repos\MedicalStore\packages\MahApps.Metro.1.6.5\lib\net46\MahApps.Metro.dll" />
+    <ReferencePath Include="C:\Users\Developer\source\repos\MedicalStore\packages\MahApps.Metro.IconPacks.1.6.0\lib\net46\MahApps.Metro.IconPacks.dll" />
+    <ReferencePath Include="C:\Users\Developer\source\repos\MedicalStore\MedicalStore.Data\bin\Debug\MedicalStore.Data.dll" />
+    <ReferencePath Include="C:\Users\Developer\source\repos\MedicalStore\MedicalStore.Model\bin\Debug\MedicalStore.Model.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Microsoft.CSharp.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\mscorlib.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\PresentationCore.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\PresentationFramework.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.ComponentModel.DataAnnotations.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Core.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Data.DataSetExtensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Data.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Net.Http.dll" />
+    <ReferencePath Include="C:\Users\Developer\source\repos\MedicalStore\packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Xaml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Xml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Xml.Linq.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\WindowsBase.dll" />
+    <ReferencePath Include="C:\Users\Developer\source\repos\MedicalStore\packages\WpfLocalizeExtension.2.3.2\lib\net35\WPFLocalizeExtension.dll" />
+    <ReferencePath Include="C:\Users\Developer\source\repos\MedicalStore\packages\XAMLMarkupExtensions.1.2.1.3\lib\net40\XAMLMarkupExtensions.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="C:\Users\Developer\source\repos\MedicalStore\MedicalStore\obj\Debug\MainWindow.g.cs" />
+    <Compile Include="C:\Users\Developer\source\repos\MedicalStore\MedicalStore\obj\Debug\View\categoryView.g.cs" />
+    <Compile Include="C:\Users\Developer\source\repos\MedicalStore\MedicalStore\obj\Debug\View\employeeView.g.cs" />
+    <Compile Include="C:\Users\Developer\source\repos\MedicalStore\MedicalStore\obj\Debug\View\medicineView.g.cs" />
+    <Compile Include="C:\Users\Developer\source\repos\MedicalStore\MedicalStore\obj\Debug\View\patientView.g.cs" />
+    <Compile Include="C:\Users\Developer\source\repos\MedicalStore\MedicalStore\obj\Debug\View\saleView.g.cs" />
+    <Compile Include="C:\Users\Developer\source\repos\MedicalStore\MedicalStore\obj\Debug\View\stockView.g.cs" />
+    <Compile Include="C:\Users\Developer\source\repos\MedicalStore\MedicalStore\obj\Debug\App.g.cs" />
+    <Compile Include="C:\Users\Developer\source\repos\MedicalStore\MedicalStore\obj\Debug\GeneratedInternalTypeHelper.g.cs" />
+  </ItemGroup>
+</Project>

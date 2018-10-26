@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalStore", "MedicalStore\MedicalStore.csproj", "{DBD13E0D-C8A8-4A15-8652-205063055131}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalStore.Model", "MedicalStore.Model\MedicalStore.Model.csproj", "{7F0E5D8D-CD09-47D2-A38F-305AF71CE3EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalStore.Data", "MedicalStore.Data\MedicalStore.Data.csproj", "{24D0BB80-8EEE-4AF3-87A6-F3DB3D907296}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{DBD13E0D-C8A8-4A15-8652-205063055131}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBD13E0D-C8A8-4A15-8652-205063055131}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBD13E0D-C8A8-4A15-8652-205063055131}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F0E5D8D-CD09-47D2-A38F-305AF71CE3EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F0E5D8D-CD09-47D2-A38F-305AF71CE3EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F0E5D8D-CD09-47D2-A38F-305AF71CE3EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F0E5D8D-CD09-47D2-A38F-305AF71CE3EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24D0BB80-8EEE-4AF3-87A6-F3DB3D907296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24D0BB80-8EEE-4AF3-87A6-F3DB3D907296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24D0BB80-8EEE-4AF3-87A6-F3DB3D907296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24D0BB80-8EEE-4AF3-87A6-F3DB3D907296}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
